@@ -1,0 +1,24 @@
+Етап 1
+
+Авторизація (front):	
+Форма логінізації:
+Поля: login, password; Кнопки: “login”, “register”.
+Відправка запиту при натисненні на кнопку ‘login’ (fetch/axios):
+POST ‘localhost:5000/login’, body: { login, password }
+Натиснення на ‘register’: перехід на форму реєстрації.
+Форма реєстрації:
+Поля: login, password; Кнопки: “Already have an account”, “register”.
+Відправка запиту при натисненні на кнопку ‘register’ (fetch/axios):
+POST ‘localhost:5000/register’, body: { username, login, password }
+Натиснення на ‘login’: перехід на форму логінізації.
+Авторизація (back):
+База даних MongoDB, у якій зберігаються Юзери (User):
+User: (username, login, password)
+Rest API (endpoints):
+Login: 
+Request: POST ‘/login’, body: { login, password };  
+Response: 200 (успіх) | 404 (невдача).
+Що робить запит: перевіряє, чи в БД є User з відповідним логіном (який прийшов в body) і потім перевіряє, чи співпадають паролі.
+Registration: 
+Request: POST ‘/register’, body: { username, login, password}
+Response: 200 (успіх) | 404 (невдача).
